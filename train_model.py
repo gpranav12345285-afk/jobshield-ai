@@ -82,8 +82,8 @@ def train() -> dict:
     )
     model = Pipeline([
         ("tfidf", TfidfVectorizer(
-            lowercase=True, strip_accents="unicode", ngram_range=(1, 2),
-            max_features=30_000, min_df=2, sublinear_tf=True,
+            lowercase=True, strip_accents="unicode", ngram_range=(1, 1),
+            max_features=10000, min_df=3, sublinear_tf=True,
             stop_words="english", dtype="float32"
         )),
         ("classifier", LogisticRegression(

@@ -10,8 +10,9 @@ METRICS_PATH = ROOT / "artifacts" / "metrics.json"
 
 # If the trained artifact is absent, attempt training once on startup.
 if not MODEL_PATH.exists():
-    from train_model import train
-    train()
+    raise FileNotFoundError(
+        "Trained model not found. Please add fake_job_model.joblib to artifacts/."
+    )
 
 bundle = joblib.load(MODEL_PATH)
 model = bundle["model"]

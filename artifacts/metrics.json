@@ -1,0 +1,56 @@
+{
+  "dataset_file": "fake_job_postings.csv",
+  "rows_used": 17880,
+  "train_rows": 14304,
+  "test_rows": 3576,
+  "fraudulent_rows": 866,
+  "genuine_rows": 17014,
+  "accuracy": 0.9773489932885906,
+  "precision_fraud": 0.7072072072072072,
+  "recall_fraud": 0.9075144508670521,
+  "f1_fraud": 0.7949367088607595,
+  "confusion_matrix_labels": [
+    "Genuine (0)",
+    "Fraudulent (1)"
+  ],
+  "confusion_matrix": [
+    [
+      3338,
+      65
+    ],
+    [
+      16,
+      157
+    ]
+  ],
+  "classification_report": {
+    "Genuine": {
+      "precision": 0.9952295766249255,
+      "recall": 0.9808992065824272,
+      "f1-score": 0.9880124315524641,
+      "support": 3403.0
+    },
+    "Fraudulent": {
+      "precision": 0.7072072072072072,
+      "recall": 0.9075144508670521,
+      "f1-score": 0.7949367088607595,
+      "support": 173.0
+    },
+    "accuracy": 0.9773489932885906,
+    "macro avg": {
+      "precision": 0.8512183919160663,
+      "recall": 0.9442068287247396,
+      "f1-score": 0.8914745702066118,
+      "support": 3576.0
+    },
+    "weighted avg": {
+      "precision": 0.9812956085294934,
+      "recall": 0.9773489932885906,
+      "f1-score": 0.9786717995542357,
+      "support": 3576.0
+    }
+  },
+  "model": "TF-IDF (unigrams + bigrams) + Logistic Regression",
+  "random_state": 42,
+  "test_size": 0.2
+}
