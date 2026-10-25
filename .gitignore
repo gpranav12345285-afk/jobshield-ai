@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+data/*.csv
+artifacts/*.joblib
+artifacts/metrics.json
+.kaggle/
+venv/
+.env
