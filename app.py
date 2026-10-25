@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 import joblib
 import gradio as gr
-
+import os
 ROOT = Path(__file__).resolve().parent
 MODEL_PATH = ROOT / "artifacts" / "fake_job_model.joblib"
 METRICS_PATH = ROOT / "artifacts" / "metrics.json"
@@ -110,4 +110,7 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue="indigo", secondary_hue="blue"),
     gr.Markdown("**Limitations:** This model learns patterns from a historical dataset. It can make false positives and false negatives, may not generalize to current listings, and must not be used as the only basis for a hiring or safety decision.")
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=int(os.environ.get("PORT", 10000))
+    )
